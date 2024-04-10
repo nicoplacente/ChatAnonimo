@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Top Secret";
+  src: url("/fonts/Top Secret.ttf");
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+#config,
+h1 {
+  font-family: "Top Secret";
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  @apply rounded-md;
+  transition: background-color 0.3s, visibility 0.3s;
+}
+
+::-webkit-scrollbar-thumb:active {
+  @apply bg-zinc-800;
+}
