@@ -1,14 +1,14 @@
 import SectionContainer from "../../reusable/SectionContainer";
 import { useState, useEffect } from "react";
-
+import Redes from "./Redes";
 const finalidad = [
   {
     title: "Finalidad de la app",
     info: "La aplicación se ha creado con el propósito de brindar entretenimiento y establecer una comunidad en la cual todos puedan compartir y expresar sus pensamientos y sentimientos sin restricciones y de manera completamente anónima.",
   },
   {
-    title: "Como Funciona",
-    info: 'Los mensajes de todos los usuarios aparecerán como "Anónimo", incluidos los tuyos, ya que no es necesario crear una cuenta para utilizar la aplicación. Lo más intrigante es que podrías estar interactuando con hasta 50 personas simultáneamente sin saber quién es quién. Mientras mantengas la sesión iniciada, los mensajes se actualizarán constantemente en tiempo real. Al cerrar la aplicación, los mensajes se borrarán y nadie más podrá verlos. La idea es mantenerse alerta, ¡podrías perderte información interesante! ;)',
+    title: "¿Cómo Funciona?",
+    info: 'Los mensajes de todos los usuarios aparecerán como "Secret:", incluidos los tuyos, ya que no es necesario crear una cuenta para utilizar la aplicación. Lo más intrigante es que podrías estar interactuando con hasta 50 personas simultáneamente sin saber quién es quién. Mientras mantengas la sesión iniciada, los mensajes se actualizarán constantemente en tiempo real. Al cerrar la aplicación, los mensajes se borrarán y nadie más podrá verlos. La idea es mantenerse alerta, ¡podrías perderte información interesante! ;)',
   },
   {
     title: "Privacidad",
@@ -38,7 +38,8 @@ export default function Info() {
           </article>
         );
       })}
-      <h2 className="text-zinc-950 w-full px-20 text-end ">Versión 1.2.0</h2>
+      <Redes />
+      <h3 className="text-zinc-950 w-full px-20 text-end ">Versión 1.3.0</h3>
     </SectionContainer>
   );
 }

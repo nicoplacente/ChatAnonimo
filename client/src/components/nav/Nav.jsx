@@ -14,7 +14,7 @@ export default function Nav({ setOpenNav }) {
   return (
     <nav
       style={{ background: `${theme}33` }}
-      className="flex text-zinc-200/50 flex-col items-start gap-1  z-10  rounded-md overflow-hidden shadow-xl top-24 right-9 absolute"
+      className="flex text-zinc-200/50 flex-col items-start gap-1  z-10  rounded-md overflow-hidden shadow-xl top-24 right-9 fixed"
     >
       <Link
         aria-label="Ir al chat"

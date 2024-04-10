@@ -10,6 +10,7 @@ export default function Footer() {
       setTheme(themeColor);
     }
   }, []);
+
   return (
     <footer className="text-white bg-zinc-900 w-full flex justify-center">
       <span className="flex text-xs lg:text-sm items-center gap-2">
@@ -18,10 +19,10 @@ export default function Footer() {
           aria-label="Ir a codeluxe"
           target="_blank"
           className="hover:underline"
-          href="/https://codeluxe.tech"
+          href="https://codeluxe.tech"
         >
           CODELUXE
-        </a>{" "}
+        </a>
         <img
           src="/codeluxe.webp"
           alt="Logo codeluxe"
@@ -29,7 +30,9 @@ export default function Footer() {
           className="size-12"
         />
         x
-        <Logo theme={theme} />
+        <span style={{ color: theme }}>
+          <Logo />
+        </span>
       </span>
     </footer>
   );

@@ -13,6 +13,7 @@ export default function Configuracion() {
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("theme", theme);
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Configuracion() {
 
   const handleMuted = () => {
     setIsMuted(!isMuted);
+    localStorage.setItem("sound", isMuted);
   };
 
   return (
@@ -39,13 +41,15 @@ export default function Configuracion() {
       </h3>
       <form
         onSubmit={handleSubmit}
-        className="w-full flex flex-col md:flex-row items-center justify-evenly gap-6 border-2"
+        className="w-full flex flex-col md:flex-row items-center justify-evenly gap-6"
       >
         <article className="flex items-center gap-4">
-          <span className="text-zinc-950 font-semibold">Cambiar Tema</span>
+          <span className="text-zinc-950 font-semibold text-lg">
+            Cambiar Tema
+          </span>
           <input type="color" value={theme} onChange={handleChangeColor} />
         </article>
-        <article className="flex items-center gap-4">
+        <article className="flex w-full md:w-fit items-center gap-4">
           <button
             style={{ background: theme }}
             aria-label="Aplicar tema"
@@ -58,6 +62,7 @@ export default function Configuracion() {
               e.preventDefault();
               localStorage.removeItem("theme");
               setTheme(INITIAL_THEME_VALUE);
+              window.location.reload();
             }}
             style={{ background: theme }}
             aria-label="Eliminar tema"
@@ -71,7 +76,7 @@ export default function Configuracion() {
       <button
         aria-label="Silenciar/Activar Sonido"
         onClick={handleMuted}
-        className="text-white scale-150 flex items-center gap-2 p-2 active:text-zinc-950/30 lg:hover:text-zinc-950/30 transition duration-300"
+        className="text-white scale-110 flex items-center gap-2 p-2 active:text-zinc-950/30 lg:hover:text-zinc-950/30 transition duration-300"
       >
         <span className="text-zinc-950 font-semibold">
           Activar/Desactivar silencio

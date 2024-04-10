@@ -5,6 +5,14 @@ import SectionContainer from "../../reusable/SectionContainer";
 
 const socket = io(import.meta.env.VITE_URL);
 
+const notificacion = new Audio();
+
+// const isMuted =
+//   localStorage.getItem("sound") == true ? "/sounds/message.mp3" : "";
+
+// notificacion.src = isMuted;
+notificacion.src = "/sounds/message.mp3";
+
 export default function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
@@ -12,13 +20,15 @@ export default function Chat() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    socket.emit("message", message);
-    const newMessage = {
-      body: message,
-      from: "Me",
-    };
-    setMessages([...messages, newMessage]);
-    setMessage("");
+    if (message !== "") {
+      socket.emit("message", message);
+      const newMessage = {
+        body: message,
+        from: "Me",
+      };
+      setMessages([...messages, newMessage]);
+      setMessage("");
+    }
   };
 
   const handleChange = (e) => {
@@ -27,6 +37,7 @@ export default function Chat() {
 
   useEffect(() => {
     const messageReceived = (message) => {
+      notificacion.play();
       setMessages([...messages, message]);
     };
     socket.on("message", messageReceived);

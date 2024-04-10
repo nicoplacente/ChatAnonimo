@@ -14,7 +14,6 @@ export default function App() {
         <Route path="/info" element={<Info />} />
         <Route path="/configuracion" element={<Configuracion />} />
       </Routes>
-
       <Footer />
     </main>
   );
