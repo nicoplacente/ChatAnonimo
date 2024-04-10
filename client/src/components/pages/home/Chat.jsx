@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { AudioButton, Send } from "../icons/Icons";
+import { AudioButton, Send } from "../../icons/Icons";
 import io from "socket.io-client";
 import SectionContainer from "../../reusable/SectionContainer";
 
