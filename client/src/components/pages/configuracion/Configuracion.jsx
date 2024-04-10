@@ -1,6 +1,6 @@
 import SectionContainer from "../../reusable/SectionContainer";
 import { useState, useEffect } from "react";
-import { Muted, NoMuted } from "../icons/Icons";
+import { Muted, NoMuted } from "../../icons/Icons";
 
 export default function Configuracion() {
   const INITIAL_THEME_VALUE = "#FF0000";
